@@ -64,6 +64,13 @@ class Game:
             print(f"{i+1} {self.to_display(self._grid[i][0])} {self.to_display(self._grid[i][1])} {self.to_display(self._grid[i][2])}")
         print()
     
+    def display_score(self) -> None:
+        print("\n##########")
+        print("# Scores #")
+        print("##########")
+        for player in self._players:
+            print(f"{player.get('name')}: {player.get('score')}")
+    
     def place(self, pos: tuple[int]) -> bool:
         if self._grid[pos[0]][pos[1]] is None:
             self._grid[pos[0]][pos[1]] = self._players[self._turn]
